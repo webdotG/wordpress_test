@@ -47,6 +47,12 @@ function theme_register_nav_menu() {
     add_theme_support( 'post-thumbnails', array( 'post' ) ); /*добавляю превьюшки ТОЛЬК для постов*/
 
     add_image_size( 'post-preview', 500, 250, true ); /*для регистрации новых размеров картинок/превьюшек*/
+
+    add_filter( 'excerpt_more', 'new_excerpt_more' );/*настройка для статьи добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt*/
+    function new_excerpt_more( $more ){
+    	global $post;
+    	return '<a href="'. get_permalink($post) . '">Читать дальше...</a>';
+    } /*настройка для статьи добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt*/
 }
 
    
