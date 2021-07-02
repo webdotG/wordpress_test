@@ -46,7 +46,6 @@ function theme_register_nav_menu() {
 
     add_theme_support( 'post-thumbnails', array( 'post' ) ); /*добавляю превьюшки ТОЛЬК для постов*/
 
-
     add_image_size( 'post-preview', 500, 250, true ); /*для регистрации новых размеров картинок/превьюшек*/
 }
 

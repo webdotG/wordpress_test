@@ -45,7 +45,7 @@
 
                   <div class="entry-header cf">
 
-<h1><a href="<?php the_permalink() ?>" title=""><?php the_title() ?></a></h1>
+<h1><a href="<?php the_permalink() ?>"/*выводит ссылку на сам пост*/ title=""><?php the_title() ?></a></h1>
 
                      <p class="post-meta">
 
@@ -62,7 +62,7 @@
                   </div>
 
                   <div class="post-thumb">
-                     <a href="single.html" title="">
+                     <a href="<?php the_permalink() ?>"/*выводит ссылку на сам пост*/ title="">
 <?php the_post_thumbnail('post-preview'/*зарегистрировал размер в functions.php/add_image_size*/); ?> <!-- для вывода превьюшек в WP-ADMIN-НАСТРОЙКИ-МЕДИАФАЙЛЫ-РАЗМЕР/для настройки размеров -->
                      </a>
                   </div>
