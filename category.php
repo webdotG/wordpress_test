@@ -69,7 +69,7 @@
 
                   <div class="post-content">
 
-<?php the_excerpt() ?><!--выводит краткое содержание поста а не пост целиком -->
+<?php the_excerpt() ?><!--выводит краткое содержание поста а не пост целиком ЭТУ ФУЕКЦИЮ МОЖНО НАСТРОИТЬ-wp-kama.ru/function/the_excerpt-->
 
                   </div>
 
