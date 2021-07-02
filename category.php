@@ -26,7 +26,7 @@
 
             <div id="primary" class="eight columns">
 
-<?php if (have_posts()) { while (have_posts()) { the_post();/*функция для вывода поста*/?>
+<?php if (have_posts()) { while (have_posts()) { the_post();/*функция/цикл для вывода поста*/?>
 
                 <article>                                  <!-- /*куда выводить посты*/ -->
                 <h1><?php the_title(); ?> </h1>           <!--  /*заголовок статьи*/ -->
@@ -37,6 +37,9 @@
 }                                                               /*конец IF*/
 ?>
 
+<-- оборачивая в такой цикл пост я автоматом добавляю его внося коррективы в стандарт wordpress -->
+
+<?php if (have_posts()) { while (have_posts()) { the_post();/*функция/цикл для вывода поста*/?>
 
                <article class="post">
 
@@ -72,6 +75,13 @@
                   </div>
 
                </article> <!-- post end -->
+
+<?php
+}                                                               /*конец WHILE*/
+}                                                               /*конец IF*/
+?>
+
+
 
                <article class="post">
 
