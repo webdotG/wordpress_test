@@ -41,6 +41,10 @@ function theme_register_nav_menu() {
     register_nav_menu( 'header_menu', 'меню в шапке' );/*'идентификатор при помощи которого вызываем меню', 'название для нас отображается в админке'*/
 
     register_nav_menu( 'footer_menu', 'меню в подвале' );
+
+    add_theme_support( 'title-tag'); /*могу удалить ТАЙТЛЫ в хедерах и wordpress будет их генерить сам в зависимости от категеории где нахожусь*/
+
+    add_theme_support( 'post-thumbnails', array( 'post' ) ); /*добавляю превьюшки ТОЛЬК для постов*/
 }
 
    

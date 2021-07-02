@@ -7,7 +7,7 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Sparrow - Free Responsive HTML5/CSS3 Template</title>
+<!--<title>Sparrow - Free Responsive HTML5/CSS3 Template</title>--> <!-- он автоматом подстаояется при поиощи ADD-THEME-SUPPORT в FUNCTIONS.PHP -->
 	<meta name="description" content="">
 	<meta name="author" content="">
 
