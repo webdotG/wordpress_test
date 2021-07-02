@@ -45,6 +45,9 @@ function theme_register_nav_menu() {
     add_theme_support( 'title-tag'); /*могу удалить ТАЙТЛЫ в хедерах и wordpress будет их генерить сам в зависимости от категеории где нахожусь*/
 
     add_theme_support( 'post-thumbnails', array( 'post' ) ); /*добавляю превьюшки ТОЛЬК для постов*/
+
+
+    add_image_size( 'post-preview', 500, 250, true ); /*для регистрации новых размеров картинок/превьюшек*/
 }
 
    

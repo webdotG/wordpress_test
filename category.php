@@ -62,7 +62,9 @@
                   </div>
 
                   <div class="post-thumb">
-                     <a href="single.html" title=""><img src="images/post-image/post-image-1300x500-01.jpg" alt="post-image" title="post-image"></a>
+                     <a href="single.html" title="">
+<?php the_post_thumbnail('post-preview'/*зарегистрировал размер в functions.php/add_image_size*/); ?> <!-- для вывода превьюшек в WP-ADMIN-НАСТРОЙКИ-МЕДИАФАЙЛЫ-РАЗМЕР/для настройки размеров -->
+                     </a>
                   </div>
 
                   <div class="post-content">
