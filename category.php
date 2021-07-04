@@ -25,17 +25,18 @@
          <div id="page-content" class="row">
 
             <div id="primary" class="eight columns">
-
+<!--
 <?php if (have_posts()) { while (have_posts()) { the_post();/*функция/цикл для вывода поста*/?>
 
-                <article>                                  <!-- /*куда выводить посты*/ -->
-                <h1><?php the_title(); ?> </h1>           <!--  /*заголовок статьи*/ -->
+                <article>                                  /*куда выводить посты*/
+                <h1><?php the_title(); ?> </h1>            /*заголовок статьи*/
                 </article>
-                <?php the_content(); ?>                    <!-- /*контент статьи*/ -->
+                <?php the_content(); ?>                   /*контент статьи*/
 <?php
-}                                                               /*конец WHILE*/
-}                                                               /*конец IF*/
+}                                                          /*конец WHILE*/
+}                                                           /*конец IF*/
 ?>
+-->
 
 <-- оборачивая в такой цикл пост я автоматом добавляю его внося коррективы в стандарт wordpress -->
 
@@ -76,7 +77,7 @@
                </article> <!-- post end -->
 
 <?php
-}    ?>                                                           /*конец WHILE*/
+}    ?>                                                         <!--  /*конец WHILE*/ -->
 
 <!--НАСТРОЙКИ-ЧТЕНИ-ОТОБРОЖАТЬ ПОСТОВ НА СТРАНИЦЕ--wp-kama.ru/function/the_posts_pagination -->
 

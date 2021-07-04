@@ -53,7 +53,7 @@ function theme_register_nav_menu() {
     	global $post;
     	return '<a href="'. get_permalink($post) . '">Читать дальше...</a>';
     } /*настройка для статьи добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt*/
-    
+
 }
 
    
