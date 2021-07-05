@@ -234,10 +234,8 @@ $posts = get_posts( array( /*в переменную POSTS помещяем вс
                         </div>
 
                         <div class="ten columns offset-2 post-content">
-                           <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-                           deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
-                           <a class="more-link" href="single.html">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
+<!--/*добавим краткое описание статьи PHP THE_EXCERPT()*/-->
+<?php the_excerpt() ?>
                         </div>
 
                      </article>
