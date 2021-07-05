@@ -26,6 +26,11 @@
 
             <div id="primary" class="eight columns">
 <!--
+
+/*ЕСЛИ НАМ НУЖНО ВЫВЕСТИ ПОСТЫ ИЗ ОПРЕДЕЛЕННОЙ КАТЕГОРИИ ИЛИ ТЕГА ИЛИ ЕЩЁ ЧЕГО ГДЕ WRODPRESS МОЖЕТ САМ ПОДОБРАТЬ ПОСТЫ*/
+
+  /* ТО МЫ ИСПОЛЬЗУЕМ СТАНДАРТНЫЙ ЦИКЛ WORDPRESS - IF(HAVE_POSTS()) { WHILE(HAVE_POSTS()) { THE_POST() } } */
+
 <?php if (have_posts()) { while (have_posts()) { the_post();/*функция/цикл для вывода поста*/?>
 
                 <article>                                  /*куда выводить посты*/
