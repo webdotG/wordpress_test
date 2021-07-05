@@ -179,42 +179,78 @@
          </div>
       </div>
 
-      <div class="blog-entries">
+                                      <div class="blog-entries">
 
-         <!-- Entry -->
-         <article class="row entry">
+<?php /*шаблон для вывода постов в ленту*/
 
-            <div class="entry-header">
+$posts = get_posts( array( /*в переменную POSTS помещяем все посты которые подходят под аргументы*/
+     /*параметры по умолчанию*/
 
-               <div class="permalink">
-                  <a href="single.html"><i class="fa fa-link"></i></a>
-               </div>
+	'numberposts' => 3, /*количество постов. 0-снимает ограничения*/
+	/*'category'    => 0, /*из какой именно категории. если удалить то будут выводиться из всех категорий*/
+	/*'orderby'     => 'date', /*сортировка по дате. если удалить то будет по умолчанию*/
+	/*'order'       => 'DESC', /*сортировка по номеру. если удалить то будет по умолчанию*/
+	/*'include'     => array(), /*добавлять какие-то отдельные посты*/
+	/*'exclude'     => array(), /*исключать какието лтдельные посты*/
+	/*'meta_key'    => '', /*ориентир на мета кей*/
+	/*'meta_value'  =>'', /*ориентир на мета вэлью*/
+	'post_type'   => 'post', /*укзывает что именно выводить ПОСТЫ или СТРАНИЦЫ*/
+	'suppress_filters' => true, // подавление работы фильтров изменения SQL запроса. Оставляем
+) );
 
-               <div class="ten columns entry-title pull-right">
-                  <h3><a href="single.html">Proin gravida nibh vel velit auctor aliquet Aenean sollicitudin auctor.</a></h3>
-               </div>
+    foreach( $posts as $post ){ /*запускаем цикл FOREACH где перебераем эти посты*/
+    	setup_postdata($post);
+?> <!--//заканчиваем php для того чтобы вставить разметку как должны выводиться посты
+                                                                               /* <div>
+                                                                                <?php the_title(); ?>
+                                                                                </div> */-->
+                        <!-- //РАЗМЕТКА КАК БУДУТ ВЫОДИТЬСЯ ПОСТЫ
 
-               <div class="two columns post-meta end">
-                  <p>
-                  <time datetime="2014-01-31" class="post-date" pubdate="">Jan 31, 2014</time>
-                  <span class="dauthor">By Sakura Haruno</span>
-                  </p>
-               </div>
+            <!-- Entry -->
+                     <article class="row entry">
 
-            </div>
+                        <div class="entry-header">
 
-            <div class="ten columns offset-2 post-content">
-               <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
-               deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
-               At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
-               <a class="more-link" href="single.html">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
-            </div>
+                           <div class="permalink">
+<!--/*везде где ссылка должна вести на пост PHP THE_PERMALINK()*/-->
+<a href="<?php the_permalink() ?>"><i class="fa fa-link"></i></a>
+                           </div>
 
-         </article> <!-- Entry End -->
+                           <div class="ten columns entry-title pull-right">
+<!--/*везде где ссылка должна вести на пост PHP THE_PERMALINK() */-->
+<!--/*заголовок статьи PHP THE_TITLE() */-->
+<h3><a href="<?php the_permalink() ?>"><?php the_title() ?>.</a></h3>
+                           </div>
+
+                           <div class="two columns post-meta end">
+                              <p>
+<!--/*для вывода даты PHP THE_TIME('F jS, Y') */-->
+<time datetime="2014-01-31" class="post-date" pubdate=""><?php the_time('F jS, Y') ?></time>
+<!--/*для вывода автора PHP THE_AUTHOR()*/-->
+<span class="dauthor"><?php the_author(); ?></span>
+                              </p>
+                           </div>
+
+                        </div>
+
+                        <div class="ten columns offset-2 post-content">
+                           <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+                           deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
+                           At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium.
+                           <a class="more-link" href="single.html">Read More<i class="fa fa-arrow-circle-o-right"></i></a></p>
+                        </div>
+
+                     </article>
+
+                               <!-- Entry End -->
+<?php
+    }//конец цикла FOREACH
+?>
+                              </div> <!-- Entries End -->
 
          
 
-      </div> <!-- Entries End -->
+
 
    </section> <!-- Journal Section End-->
 
