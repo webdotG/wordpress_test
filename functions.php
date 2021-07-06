@@ -24,6 +24,20 @@ add_action ( 'widgets_init' , 'register_my_widgets' );
 /*подключаю сайд бар */
 
 
+//добавляю фильтр для изменения title страницы
+add_filter( 'document_title_separator', 'rename_title' );
+
+function rename_title( $sep /* переменная-$title. один параметр для функции*/ ){
+
+	                  //add_filter--работает по принципу->получил->обработал/изменил->вернул
+
+              /*в переменную title можем записать всё что нам нужно*/
+$sep = ' (.)(.) ';
+              /*в процессе фильтра ОБЯЗАТЕЛЬНО НУЖНО ВОЗВРАЩАТЬ КАКОЕ-ТО ЗНАЧЕНИЕ*/
+return $sep;
+}
+
+
 function register_my_widgets(){
 
 	register_sidebar( array(
@@ -83,6 +97,11 @@ function theme_register_nav_menu() {
     </nav>
     ';
     }
+
+    //ВЫВОЖУ ПАГИНАЦИЮ
+    the_posts_pagination( array(
+    'end_size'=>2,
+    ) );
 }
 
    
