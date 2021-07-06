@@ -8,7 +8,7 @@
          <div class="row">
 
             <div class="ten columns centered text-center">
-               <h1>--SINGLE--wp-kama.ru/id_7654/ierarhiya-fajlov-temy-shablona.html<span>.</span></h1>
+               <h1>--страница с постом--wp-kama.ru/id_7654/ierarhiya-fajlov-temy-shablona.html<span>.</span></h1>
 
                <p>Aenean condimentum, lacus sit amet luctus lobortis, dolores et quas molestias excepturi
                enim tellus ultrices elit, amet consequat enim elit noneas sit amet luctu. </p>
