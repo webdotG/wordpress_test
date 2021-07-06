@@ -70,6 +70,13 @@ function theme_register_nav_menu() {
     //УДАЛЯЕТ H2 из шаблонв пагинации
     add_filter( 'navigation_markup_template', 'my_navigation_template', 10, 2 );
     function my_navigation_template ( $template, $class ){
+    //КАКАЯ БЫЛА РАЗМЕТКА
+            // <nav class="navigation %1$s" role="navigation">
+            // <h2 class"screen-reader-text">%2$s</h2>
+            // <div class="nav-links">%3$s</div>
+            // </nav>
+
+    //КАКУЮ РАЗМЕТКУ ВЫ ВОЩВРАЩАЕМ (удалил H2)
     return '
     <nav class="navigation %1$s" role="navigation">
     <div class="nav-links">%3$s</div>
