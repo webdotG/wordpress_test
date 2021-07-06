@@ -24,7 +24,7 @@ add_action ( 'widgets_init' , 'register_my_widgets' );
 /*подключаю сайд бар */
 
 
-//добавляю фильтр для изменения title страницы
+                                  //добавляю фильтр для изменения title страницы
 add_filter( 'document_title_separator', 'rename_title' );
 
 function rename_title( $sep /* переменная-$title. один параметр для функции*/ ){
@@ -37,6 +37,13 @@ $sep = ' (.)(.) ';
 return $sep;
 }
 
+
+                               //добавляю фильтр для вывода контента
+add_filter( 'the_content', 'test_content' );
+
+function test_content(){ /*когда wordpress выводит контент какого-то поста добавим в конце контента произвольную фразу*/
+
+}
 
 function register_my_widgets(){
 
