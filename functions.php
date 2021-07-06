@@ -24,6 +24,9 @@ add_action ( 'widgets_init' , 'register_my_widgets' );
 /*подключаю сайд бар */
 
 
+
+
+
                                   //добавляю фильтр для изменения title страницы
 add_filter( 'document_title_separator', 'rename_title' );
 
@@ -38,12 +41,17 @@ return $sep;
 }
 
 
+
+
                                //добавляю фильтр для вывода контента
 add_filter( 'the_content', 'test_content' );
-
-function test_content(){ /*когда wordpress выводит контент какого-то поста добавим в конце контента произвольную фразу*/
-
+           //влез в стандартное действие wordpress и добавил в свое действие а именно ДОБАВИЛ ФРАЗУ В КОНЦЕ ПОСТА
+function test_content($content){ /*когда wordpress выводит контент какого-то поста добавим в конце контента произвольную фразу*/
+$content .= 'всем спасибо. все свободны';
+return $content;
 }
+
+
 
 function register_my_widgets(){
 
@@ -88,6 +96,10 @@ function theme_register_nav_menu() {
     	return '<a href="'. get_permalink($post) . '">Читать дальше...</a>';
     }
 
+
+
+
+
     //УДАЛЯЕТ H2 из шаблонв пагинации
     add_filter( 'navigation_markup_template', 'my_navigation_template', 10, 2 );
     function my_navigation_template ( $template, $class ){
@@ -110,6 +122,8 @@ function theme_register_nav_menu() {
     'end_size'=>2,
     ) );
 }
+
+
 
    
 
