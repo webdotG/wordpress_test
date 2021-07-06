@@ -1,4 +1,16 @@
 <?php
+                //add_action ( $tag, $function_to_add, $priority = 10, $accepted_args = 1)
+
+                             //add_action--я ничего не меняю в действиях wordpress я просто подсадиваюсь/цепляюсь
+
+                             //$tag--подключаюсь к какому-то событию
+
+                             //$function_to_add--выполняю какую-то функцию
+
+                             //$priority = 10--задаю приоритет
+
+                             //$accepted_args--передаю аргументы
+
 
 add_action ( 'wp_enqueue_scripts'/*хук для скриптов */, 'style_theme'/*название */ ); /*добавление действия. говорю: ворд проесс пока ты читаешь скрипты
 остановись и добавь действие- подключи мои скрипты */
@@ -48,12 +60,22 @@ function theme_register_nav_menu() {
 
     add_image_size( 'post-preview', 500, 250, true ); /*для регистрации новых размеров картинок/превьюшек*/
 
+    //НАСТРОЙКА ДЛЯ СТАТЬИ добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt
     add_filter( 'excerpt_more', 'new_excerpt_more' );/*настройка для статьи добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt*/
     function new_excerpt_more( $more ){
     	global $post;
     	return '<a href="'. get_permalink($post) . '">Читать дальше...</a>';
-    } /*настройка для статьи добавляет ссылку на читать дальше---wp-kama.ru/function/the_excerpt*/
+    }
 
+    //УДАЛЯЕТ H2 из шаблонв пагинации
+    add_filter( 'navigation_markup_template', 'my_navigation_template', 10, 2 );
+    function my_navigation_template ( $template, $class ){
+    return '
+    <nav class="navigation %1$s" role="navigation">
+    <div class="nav-links">%3$s</div>
+    </nav>
+    ';
+    }
 }
 
    
